@@ -6,7 +6,7 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 
 ## Features
 
-- **AI-Powered Personalization:** Uses Gemini API to generate study plans based on your study habits and goals.  
+- **AI-Powered Personalization:** Uses Gemini API (Gemini 2.5 Flash) to generate study plans based on your study habits and goals.  
 - **Time-Structured Sessions:** Creates detailed plans with specific start times, durations, and subjects.  
 - **Google Calendar Export:** Automatically generates a downloadable `.ics` file to import into Google Calendar.  
 - **Responsive Design:** Clean and mobile-friendly interface built with Tailwind CSS.  
@@ -32,7 +32,7 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 
 - **Frontend:** HTML, Tailwind CSS  
 - **Backend:** Flask (Python)  
-- **AI Integration:** Google Gemini API  
+- **AI Integration:** Google Gemini API (Gemini 2.5 Flash)  
 - **Calendar Export:** Python `ics` generation  
 - **Parsing Tools:** Regex, BeautifulSoup  
 
@@ -40,20 +40,23 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 ## Project Structure
 
 ```
-.
-├── templates/             # HTML templates for Flask
-│   ├── form.html         # Input form for study habits
-│   └── result.html        # Displays generated study plan
-├── app.py                 # Main Flask application
-└── README.md              # Project documentation
+AI-Enchanced-Study-Planner/
+│
+├── templates/            # HTML templates for Flask
+│   ├── form.html
+│   └── result.html
+├── app.py                # Main Flask application
+├── README.md             # Project README and instructions
+└── requirements.txt      # Python dependencies
 ```
+
 
 ## Running the AI-Powered Study Planner Locally
 
 ### 1. **Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/ai-study-planner.git
-cd ai-study-planner
+git clone https://github.com/hszewczyk/AI-Enchanced-Study-Plan-Generator.git
+cd AI-Enchanced-Study-Plan-Generator
 ```
 
 
@@ -80,12 +83,6 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-
-**Dependencies include:**
-- `flask`
-- `beautifulsoup4`
-- `google-genai`
-- `python-dotenv`
 
 
 ### 4. **Add Your Gemini API Key**
