@@ -48,12 +48,64 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 └── README.md              # Project documentation
 ```
 
+## Running the AI-Powered Study Planner Locally
+
+### 1. **Clone the Repository**
+```bash
+git clone https://github.com/yourusername/ai-study-planner.git
+cd ai-study-planner
+```
+
+
+### 2. **Create a Virtual Environment**
+It’s recommended to use a virtual environment to isolate dependencies.
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+- **Windows:**
+```bash
+venv\Scripts\activate
+```
+- **macOS/Linux:**
+```bash
+source venv/bin/activate
+```
+
+
+### 3. **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**Dependencies include:**
+- `flask`
+- `beautifulsoup4`
+- `google-genai`
+- `python-dotenv`
+
+
+### 4. **Add Your Gemini API Key**
+Create a `.env` file in the project root:
+
+```
+GEMINI_API_KEY=your_real_api_key_here
+```
+
+
+### 5. **Run the Flask App**
+```bash
+python app.py
+```
+
 
 ## License
 
 This project is open-source and available under the MIT License.
 
----
 
 ## Acknowledgments
 
