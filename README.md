@@ -1,14 +1,14 @@
 # AI-Enchanced-Study-Plan-Generator
 
-A web application that helps students generate personalized study plans using Google's **Gemini API**.  
-The app analyzes the user’s study habits, subjects, and goals to create structured, time-based study schedules — which can then be **exported to Google Calendar**.
+A web application that helps students generate personalized study plans using Google's **Gemini 2.5 Flash**.  
+The app analyzes the user’s study habits, subjects, and goals to create structured, time-based study schedules — which can then be **exported to your favourite calendar app**.
 
 
 ## Features
 
 - **AI-Powered Personalization:** Uses Gemini API (Gemini 2.5 Flash) to generate study plans based on your study habits and goals.  
 - **Time-Structured Sessions:** Creates detailed plans with specific start times, durations, and subjects.  
-- **Google Calendar Export:** Automatically generates a downloadable `.ics` file to import into Google Calendar.  
+- **Google Calendar Export:** Automatically generates a downloadable `.ics` file to import into any calendar app (e.g. Google Calendar).  
 - **Responsive Design:** Clean and mobile-friendly interface built with Tailwind CSS.  
 - **Fast and Lightweight:** Powered by Flask for simplicity and speed.
 
@@ -25,7 +25,7 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 
 3. The Flask backend parses this plan, displays it neatly in the browser, and allows the user to download an `.ics` calendar file.
 
-4. The file can then be **imported directly into Google Calendar**, maintaining all event titles, durations, and descriptions.
+4. The file can then be **imported directly into any Calendar App (Google Calendar etc.)**, maintaining all event titles, durations, and descriptions.
 
 
 ## Tech Stack
@@ -40,7 +40,7 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 ## Project Structure
 
 ```
-AI-Enchanced-Study-Planner/
+AI-Enchanced-Study-Plan-Generator/
 │
 ├── templates/            # HTML templates for Flask
 │   ├── form.html
@@ -102,10 +102,3 @@ python app.py
 ## License
 
 This project is open-source and available under the MIT License.
-
-
-## Acknowledgments
-
-- [Google Gemini API](https://ai.google/)  
-- [Flask](https://flask.palletsprojects.com/)  
-- [Tailwind CSS](https://tailwindcss.com/)
