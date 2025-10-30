@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Study Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FFF8F0] min-h-screen flex items-center justify-center px-4 py-8">
+  <div class="w-3/4 max-w-5xl bg-white rounded-2xl shadow-lg p-6 sm:p-10 overflow-y-auto">
+    <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">
+      Personalized Study Plan
+    </h1>
+
+    <div class="text-center mt-8 space-x-4">  
+        <form action="/download_ics" method="post" class="inline-block">
+          <input type="hidden" name="plan" value="{{ plan|e }}">
+          <button type="submit"
+                  class="inline-block bg-[#F4D8A8] text-gray-800 font-medium px-6 py-2 rounded-lg shadow-sm
+                         hover:bg-[#F1C98C] hover:shadow-md transition-all duration-300 ease-out
+                         focus:outline-none focus:ring-2 focus:ring-[#E9B97F]">
+            Download Study Plan
+          </button>
+        </form>
+      </div>
+
+    <div class="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-gray-700 leading-relaxed">
+      {{ plan|safe }}
+    </div>
+
+    <div class="text-center mt-8 space-x-4">
+      <a href="/"
+         class="inline-block bg-[#F4D8A8] text-gray-800 font-medium px-6 py-2 rounded-lg shadow-sm
+                hover:bg-[#F1C98C] hover:shadow-md transition-all duration-300 ease-out
+                focus:outline-none focus:ring-2 focus:ring-[#E9B97F]">
+        Go Back
+      </a>
+    </div>
+  </div>
+</body>
+</html>

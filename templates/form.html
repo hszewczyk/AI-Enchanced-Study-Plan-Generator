@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Habits Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FFF8F0] min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+    <div class="text-center mb-6">
+        <h1 class="text-2xl font-semibold text-gray-800">
+          Study Plan Generator<br>
+          <span class="text-lg font-light text-gray-600">(AI Enhanced)</span>
+        </h1>
+        <p class="mt-3 text-gray-700 text-base max-w-md mx-auto">
+          Enter information about your study habits. The more information you provide, 
+          the more detailed your study plan will be.
+        </p>
+      </div>
+      
+
+    <form action="/generate" method="post" class="space-y-5">
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Average study hours per day: <span class="font-light text-gray-500 text-sm">(e.g. 6 hours, around 3h)</span></label>
+        <input type="text" name="study_hours"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Preferred time of studying: <span class="font-light text-gray-500 text-sm">(e.g. 8am, in the afternoon)</span></label>
+        <input type="text" name="study_time"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Subjects you study: <span class="font-light text-gray-500 text-sm">(e.g. Math, Literature)</span></label>
+        <input type="text" name="subjects"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Due date: <span class="font-light text-gray-500 text-sm">(e.g. 15 January, 27.07)</span></label>
+        <input type="text" name="date"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300">
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Your study goal: <span class="font-light text-gray-500 text-sm">(e.g. Passing an exam)</span></label>
+        <textarea name="goal" rows="3"
+                  class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300 resize-none"></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit"
+                class="bg-[#F4D8A8] text-gray-800 font-medium px-6 py-2 rounded-lg shadow-sm 
+                       hover:bg-[#F1C98C] hover:shadow-md transition-all duration-300 ease-out 
+                       focus:outline-none focus:ring-2 focus:ring-[#E9B97F]">
+          Generate Study Plan
+        </button>
+      </div>      
+    </form>
+  </div>
+</body>
+</html>
