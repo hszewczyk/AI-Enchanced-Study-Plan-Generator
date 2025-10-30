@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, Response
 from io import BytesIO
 from bs4 import BeautifulSoup
 from google import genai
@@ -98,6 +98,7 @@ def generate():
         study_plan_html = study_plan_html[:-3]
     study_plan_html = study_plan_html.strip()
 
+    del response
 
     return render_template('result.html', plan=study_plan_html)
 
@@ -105,6 +106,8 @@ def generate():
 def download_ics():
     study_plan_html = request.form['plan']
     soup = BeautifulSoup(study_plan_html, "html.parser")
+
+    del study_plan_html
 
     full_text = soup.get_text(separator="\n")
     lines = [line.strip() for line in full_text.split("\n") if line.strip()]
@@ -152,6 +155,8 @@ def download_ics():
             "end": datetime.now() + timedelta(hours=1)
         })
 
+    return generate_calendar_response(events)
+'''
     ics_content = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//StudyPlan//EN\n"
     for e in events:
         ics_content += "BEGIN:VEVENT\n"
@@ -168,7 +173,27 @@ def download_ics():
         download_name="study_plan.ics",
         mimetype="text/calendar"
     )
+'''
 
+def generate_calendar_response(events):
+    def generate():
+        yield "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//StudyPlan//EN\n"
+        for e in events:
+            yield "BEGIN:VEVENT\n"
+            yield f"SUMMARY:{e['summary']}\n"
+            yield f"DESCRIPTION:{e['description']}\n"
+            yield f"DTSTART:{e['start'].strftime('%Y%m%dT%H%M%S')}\n"
+            yield f"DTEND:{e['end'].strftime('%Y%m%dT%H%M%S')}\n"
+            yield "END:VEVENT\n"
+        yield "END:VCALENDAR"
+
+    return Response(
+        generate(),
+        mimetype="text/calendar",
+        headers={
+            "Content-Disposition": "attachment; filename=study_plan.ics"
+        }
+    )
 
 
 if __name__ == '__main__':
