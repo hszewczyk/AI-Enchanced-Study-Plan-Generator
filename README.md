@@ -51,7 +51,7 @@ The app analyzes the user’s study habits, subjects, and goals to create struct
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the MIT License.
 
 ---
 
